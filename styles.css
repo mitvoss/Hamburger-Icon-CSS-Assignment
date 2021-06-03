@@ -1,6 +1,21 @@
+* {
+    margin: 0;
+    padding:0;
+}
+
 :root {
     --menu-bar-width: 60px;
     --menu-bar-height: 10px;
+}
+
+.container {
+    margin-top:20px;
+    margin-left:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:60px;
+    height: 50px;
 }
 
 #menu {
@@ -8,7 +23,8 @@
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
+    transition: 0.035s ease-out;
+
 }
 
 #menu::before,
@@ -19,6 +35,8 @@
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
     position: absolute;
+    transition: 0.45s ease-out;
+
 }
 
 #menu::before {
@@ -31,3 +49,24 @@
     top: 20px;
 }
 
+
+.container:hover #menu{
+    background-color: transparent;
+    transition: 0.03s ease-in-out;
+
+}
+
+.container:hover #menu::before{
+    transform: rotate(45deg);
+    top:0;
+    transition: 0.35s ease-in-out;
+
+}
+
+.container:hover #menu::after{
+    transform: rotate(-45deg);
+    top:0;
+    transition: 0.35s ease-in-out;
+
+
+}
